@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Sautez de joie</title>
-		<link href="styles/style.css" rel="stylesheet">
-	</head>
-	<body>
-		<div id="header">
-			<h2>Sautez de joie, ventes privées</h2>
+  <head>
+    <title>Sautez de joie</title>
+    <link href="styles/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <h2>Sautez de joie, ventes privées</h2>
       <p>Cliquez sur une image pour découvrir votre réduction</p>
-		</div>
-		<div id="main">
-			<div class="guess_box"><img src="images/jump1.jpg"/></div>
-			<div class="guess_box"><img src="images/jump2.jpg"/></div>
-			<div class="guess_box"><img src="images/jump3.jpg"/></div>
-			<div class="guess_box"><img src="images/jump4.jpg"/></div>
-		</div>
+    </div>
+    <div id="main">
+      <div class="guess_box"><img src="images/jump1.jpg"/></div>
+      <div class="guess_box"><img src="images/jump2.jpg"/></div>
+      <div class="guess_box"><img src="images/jump3.jpg"/></div>
+      <div class="guess_box"><img src="images/jump4.jpg"/></div>
+    </div>
 
-		<script src="scripts/jquery.js"></script>
-		<script>
-			$(document).ready(function() {
-        var img_avec_reduction = Math.floor(Math.random()*4);  //genere un nombre aléatoire entre 0 et 4
-				$(".guess_box").click( function() {
-					$(".guess_box p").remove(); //supprime la remise
-          var discount_msg = "<p>Votre remise de 20% avec le code SPECIAL20</p>"; //creer une balise p dans le code
-          var wrong_image_msg = "<p>Vous n'avez rien gagner</p>";
-          var msg = img_avec_reduction == $(".guess_box").index() ? discount_msg : wrong_image_msg;
-					$(this).append(msg); //ajoute a la div courante (this)
-          $(".guess_box").off("click");
-				});
-			});
-		</script>
-	</body>
+    <script src="scripts/jquery.js"></script>
+    <script>
+      var win_msg = "<p>Votre remise de 20% avec le code SPECIAL20</p>"; //creer une balise p dans le code
+      var loose_msg = "<p>Vous n'avez rien gagner</p>";
+      $(document).ready(function() {
+        $(".guess_box").click( function() {
+          //$(".guess_box p").remove(); //supprime la remise
+          var img_avec_reduction = Math.floor(Math.random()*4);  //genere un nombre aléatoire entre 0 et 4
+          var msg = img_avec_reduction == $(".guess_box").index() ? win_msg : loose_msg;
+          $(this).append(msg); //ajoute a la div courante (this)
+        $(".guess_box").off("click");
+        });
+      });
+    </script>
+  </body>
 </html>
