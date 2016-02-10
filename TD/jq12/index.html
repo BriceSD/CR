@@ -18,11 +18,11 @@
 
     <script src="scripts/jquery.js"></script>
     <script>
-      var win_msg = "<p>Votre remise de 20% avec le code SPECIAL20</p>"; //creer une balise p dans le code
+      var win_msg = "<p>Votre remise de 20% avec le code SPECIAL20</p>";
       var loose_msg = "<p>Vous n'avez rien gagner</p>";
       $(document).ready(function() {
         $(".guess_box").click( function() {
-          var img_avec_reduction = Math.floor(Math.random()*4);  //genere un nombre aléatoire entre 0 et 4
+          var img_avec_reduction = Math.floor(Math.random()*4);
           var img_choisie = $(".guess_box").index();
           $(this).append(img_avec_reduction == img_choisie ? win_msg : loose_msg);
         $(".guess_box").off("click");
