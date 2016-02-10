@@ -22,7 +22,6 @@
       var loose_msg = "<p>Vous n'avez rien gagner</p>";
       $(document).ready(function() {
         $(".guess_box").click( function() {
-          //$(".guess_box p").remove(); //supprime la remise
           var img_avec_reduction = Math.floor(Math.random()*4);  //genere un nombre aléatoire entre 0 et 4
           var msg = img_avec_reduction == $(".guess_box").index() ? win_msg : loose_msg;
           $(this).append(msg); //ajoute a la div courante (this)
