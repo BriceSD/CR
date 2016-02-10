@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Test jQuery</title>
+   </head>
+   <body>
+   <h1><b>On teste les touche de clavier</b></h1>
+   <!-- trouver comment crer une balise -->
+   <p id="numero"></p> 
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+   <!-- jQuery -->
+   <script>
+    $(document).ready(function(){
+      $(document).keyup(function(touche){ // on écoute l'évènement keyup()
+        $("#numero p").remove(); //si la phrase existe deja on la supprime
+        var ascii = touche.which || touche.keyCode; //on recupere le code ascii de la touche
+        var phrase = "<p>le numero de la touche de clavier est: " + ascii + "</p>"; //genere la phrase
+        $("#numero").append(phrase); //ecrit la phrase dans le code html
+        //alert('yo');
+      });
+    });
+   </script>
+   </body>
+</html>

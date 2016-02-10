@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title>Insertion, copie et suppression de données</title>
+  </head>
+  <body>
+  	<h1> Appuyer sur Entrée pour les changements </h1>
+	<h2 id="un">Lorem ipsum</h2>
+	<p>
+	  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	</p>
+	<hr>
+	<h2 id="deux">Lorem ipsum suite</h2>
+	<p>
+	  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<hr>
+	<h2 id="trois">Liste à puces</h2>
+	<ul>
+		<p>Appuyer sur: </p>
+	  <li>la fleche gauche pour l'ajout d'une espace et de trois astérisques à la suite de chaque titre h2 </li>
+	  <li>la fleche droite pour l'ajout de trois astérisques et d'une espace avant chaque titre h2 </li>
+	  <li>la fleche haut pour l'ajout d'une ligne de séparation horizontale avant le titre h2 et comme id#trois</li>
+	  <li>la fleche bas pour l'insertion de deux sauts de ligne après chaque balise hr </li>
+	</ul>      
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+	  		$(document).keyup(function(touche){
+	  			var ascii = touche.which || touche.keyCode;
+	  			if(ascii == 37){
+	  				$('h2').append(' ***').html();
+	  				var texte = $("h2#trois").text();
+	  			}
+	  			else if(ascii == 38){
+	  				$('#trois').before('<hr>');
+	  			}
+	  			else if(ascii == 39){
+	  				$('h2').prepend('*** ');
+	  			}
+	  			else if(ascii == 40){
+	  				$('hr').after('hr hr hr');
+	  			}
+	  				
+	  				
+	  		});	
+		}); 
+	</script>
+  </body>
+</html>

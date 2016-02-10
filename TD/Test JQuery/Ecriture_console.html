@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Test jQuery</title>
+   </head>
+   <body>
+   <h1><b>Ecriture dans la console</b></h1>
+   <!-- trouver comment crer une balise -->
+   <p id="numero">cliquer ici</p> 
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+   <!-- jQuery -->
+   <script>
+    $(document).ready(function(){
+    	$("#numero").click(function(){
+    		var texte = "cliqué";
+    		//$("#numero").text(texte);
+    		$(this).html("<b><u>"+texte+"</u></b>");
+    		//console.log("modification du contenu");
+    		console.log("contenu html modifié");
+    	});
+      });
+   </script>
+   </body>

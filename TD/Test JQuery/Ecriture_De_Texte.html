@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title>Insertion, copie et suppression de données</title>
+  </head>
+  <body>
+  	<h1 id="titre">Modification du texte en JQuery</h1>
+	<p id="un">Premiere ligne</p>
+	<p id="deux">Deuxieme ligne</p>
+	<p id="trois">Troisieme ligne</p>
+		<ul id="liste">
+			<li>Appuyer sur fleche du gauche pour copier coller le premier paragraphe dans les 2 autres</li>
+			<li>Appuyer sur fleche du haut pour mettre en gras le titre</li>
+		</ul>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+	  		$(document).keyup(function(touche){
+	  			var ascii = touche.which || touche.keyCode;
+	  			if(ascii == 37){
+	  				var texte = $("p:first").text();
+	  				$("#deux").remove().append("<p>"+texte+"</p>");
+	  				//$("#trois p").remove().append("<p>"+texte+"</p>");
+	  				//$("#deux p").append("<p>"+texte+"</p>");
+	  				
+	  				//var html = $(document).html();
+	  				//$(document).write(html);
+	  				//$("#deux p").remove();
+	  				
+	  			}
+	  			
+	  			else if(ascii == 38){
+	  				$('#trois').before('<hr>');
+	  			}
+	  			/*
+	  			else if(ascii == 39){
+	  				$('h2').prepend('*** ');
+	  			}
+	  			else if(ascii == 40){
+	  				$('hr').after('hr hr hr');
+	  			}
+	  			*/
+	  				
+	  				
+	  		});	
+		}); 
+	</script>
+  </body>
+</html>
