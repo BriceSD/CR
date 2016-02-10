@@ -23,7 +23,8 @@
       $(document).ready(function() {
         $(".guess_box").click( function() {
           var img_avec_reduction = Math.floor(Math.random()*4);  //genere un nombre aléatoire entre 0 et 4
-          var msg = img_avec_reduction == $(".guess_box").index() ? win_msg : loose_msg;
+          var img_choisie = $(".guess_box").index();
+          var msg = img_avec_reduction == img_choisie ? win_msg : loose_msg;
           $(this).append(msg); //ajoute a la div courante (this)
         $(".guess_box").off("click");
         });
